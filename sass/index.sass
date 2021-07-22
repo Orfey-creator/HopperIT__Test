@@ -1,0 +1,154 @@
+// @import 'font'
+@import 'settings'
+@import 'normalize'
+
+body
+    background: $bgc
+.logo
+    padding: 32px 0 0 24px
+.input // общиий стиль для инпутов
+    width: 100%
+    border: none
+    padding: 18px 16px
+    color: $prompt
+    border-bottom: solid $blue 2px
+    margin-bottom: 24px
+    background-color: $bgc
+
+input::-webkit-input-placeholder // цвет placeholder для safari & chrome
+    color: $prompt
+input::-moz-placeholder // цвет placeholder для firefox
+    color: $prompt
+
+.hero
+    max-width: 540px
+    background-color: $white
+    margin: auto
+    &-header
+        display: flex
+        flex-flow: column wrap
+        justify-content: center
+        align-items: center 
+        padding: 40px 60px
+        &__title
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: 300
+            font-size: 32px
+            line-height: 40px
+            text-align: center
+            letter-spacing: 0.01em
+            text-transform: uppercase
+            color: $blue
+
+            margin-bottom: 12px
+        &__txt
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 20px
+            text-align: center
+            color: $prompt
+    &-fields
+        padding: 0 60px
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
+        align-items: center
+        & div 
+            position: relative
+            & img
+                position: absolute
+                top: 14px
+                right: 18px
+        &__js
+            margin-top: 24px
+            border: none
+            margin-bottom: 0
+            &-range
+                width: 100%
+    &-radio
+        display: flex
+        flex-flow: column wrap
+        padding: 0 60px
+        margin-bottom: 24px
+        &__title
+            margin: 24px 0 12px 0
+
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 20px
+            color: $blue
+        &__input
+            margin-right: 12px
+        &__label
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 20px
+            color: $blue
+    &-clip
+        padding: 0 60px
+        margin-bottom: 32px
+        &__title
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 20px
+            display: flex
+            align-items: center
+            color: $blue
+        &__input
+            display: none
+        &__label
+            display: flex
+            justify-content: center
+            align-items: center
+            max-width: 187px
+            background: $expurple
+            border-radius: 4px
+            height: 32px
+            &:hover
+                border: 1.5px solid $purple
+            &-img
+                margin-right: 8px
+            &-txt
+                font-family: Suisse Intl
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 20px
+                color: $blue
+    &-submit
+        padding: 0 60px
+        
+        &__btn
+            border-radius: 4px
+            background-color: $purple
+            color: $white
+            font-family: Suisse Intl
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 20px
+            padding: 12px 24px
+            border: none
+            margin-bottom: 40px 
+.question
+    font-family: Suisse Intl
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 20px
+    color: $prompt
+    & div 
+        margin: 0 0 24px 32px
+        & a
+            color: $blue
+            text-decoration: none
+

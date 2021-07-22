@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Анкета соискателя</title>
+</head>
+<body>
+   <header class="header">
+      <a href="https://hopper-it.ru/">
+        <img src="img/logo.svg" alt="" class="logo">
+      </a>
+   </header>
+   <form class="hero">
+        <div class="hero-header">
+            <h1 class="hero-header__title">Анкета соискателя</h1>
+            <span class="hero-header__txt">Допускается загрузка документов в форматах PDF, JPG, JPEG, PNG</span>
+        </div>
+        <div class="hero-fields">
+            <input type="text" class="hero-fields__name input" placeholder="ФИО">
+            <input type="text" class="hero-fields__dob input" placeholder="Дата рождения">
+            <input type="text" class="hero-fields__mail input" placeholder="Почта">
+            <input type="text" class="hero-fields__phone input" placeholder="Телефон">
+            <div style="width: 100%;">
+                <input type="text" class="hero-fields__residence input" placeholder="Адрес фактического проживания">
+                <img src="img/mark.svg" alt="">
+            </div>
+            <input type="text" class="hero-fields__js input" placeholder="Уровень владения JavaScript">
+            <input type="range" class="hero-fields__js-range">
+        </div>
+        <div class="hero-radio">
+            <h3 class="hero-radio__title">Вид трудовой книжки</h3>
+            <div>
+                <input type="radio" name="workbook" id="workbook1" class="hero-radio__input">
+                <label for="workbook1" class="hero-radio__label">Электронная</label>
+            </div>
+           <div>
+                <input type="radio" name="workbook" id="workbook2" class="hero-radio__input" checked>
+                <label for="workbook2" class="hero-radio__label">Бумажная</label>
+           </div>
+        </div>
+        <div class="hero-clip">
+            <h3 class="hero-clip__title">Трудовая книжка / выписка из электронной книжки</h3>
+            <input type="file" name="file" id="file" class="hero-clip__input">
+            <label for="file" class="hero-clip__label">
+                <img src="img/clip.svg" alt="Прикрепить файл" class="hero-clip__label-img">
+                <span class="hero-clip__label-txt">Прикрепить файл</span>
+            </label>
+        </div>
+        <div class="hero-submit">
+            <button class="hero-submit__btn">
+                Отправить
+            </button>
+        </div>
+   </form>
+   <span class="question">
+        <div>
+            Возникли вопросы? 
+        </div>
+        <div>
+            Задайте свой вопрос в Telegram <a href="#">@bot_Hopper</a> 
+        </div>
+    </span>
+</body>
+</html>
