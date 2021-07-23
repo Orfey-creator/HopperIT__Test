@@ -1,13 +1,2 @@
-@font-face {
-    font-family:'Suisse Intl Light';
-    src: url('/font/SuisseIntl-Light.eot');
-	src: url('/font/?#iefix') format('embedded-opentype'),
-		url('/font/SuisseIntl-Light.woff2') format('woff2'),
-		url('/font/SuisseIntl-Light.woff') format('woff'),
-		url('/font/SuisseIntl-Light.ttf') format('truetype'),
-		url('/font/SuisseIntl-Light.svg#SuisseIntl-Light') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    unicode-range: U+0020-00FE;
-}
+@import url(//db.onlinewebfonts.com/c/88f10bf18a36407ef36bf30bc25a3618?family=Suisse+Intl);
+@font-face {font-family: "Suisse Intl"; src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot"); src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff") format("woff"), url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.svg#Suisse Intl") format("svg"); }

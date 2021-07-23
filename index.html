@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
+    <link href="//db.onlinewebfonts.com/c/88f10bf18a36407ef36bf30bc25a3618?family=Suisse+Intl" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.6.0/dist/css/suggestions.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.6.0/dist/js/jquery.suggestions.min.js"></script>
@@ -26,25 +27,43 @@
             <span class="hero-header__txt">Допускается загрузка документов в форматах PDF, JPG, JPEG, PNG</span>
         </div>
         <div class="hero-fields">
-            <input type="text" class="hero-fields__name input" placeholder="ФИО">
-            <input type="text" class="hero-fields__dob input" placeholder="Дата рождения">
-            <input type="text" class="hero-fields__mail input" placeholder="Почта">
-            <input type="text" class="hero-fields__phone input" placeholder="Телефон">
-            <div style="width: 100%;">
-                <input type="text" class="hero-fields__residence input" id="search_input" placeholder="Адрес фактического проживания">
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__name input" id="name">
+                <label class="input-wrapper__placeholder" for="name">ФИО</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__dob input" id="dob">
+                <label class="input-wrapper__placeholder" for="dob">Дата рождения</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__mail input" id="mail">
+                <label class="input-wrapper__placeholder" for="mail">Почта</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__phone input" id="phone">
+                <label class="input-wrapper__placeholder" for="phone">Телефон</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__residence input" id="search_input" >
+                <label class="input-wrapper__placeholder" for="search_input">Адрес фактического проживания</label>
                 <img src="img/mark.svg" alt="">
             </div>
-            <input type="text" class="hero-fields__js input" placeholder="Уровень владения JavaScript">
+            <div class="input-wrapper">
+                <input type="text" class="hero-fields__js input" id="js">
+                <label class="input-wrapper__placeholder" for="js">Уровень владения JavaScript</label>
+            </div>
             <input type="range" class="hero-fields__js-range">
         </div>
         <div class="hero-radio">
             <h3 class="hero-radio__title">Вид трудовой книжки</h3>
-            <div>
+            <div class="radio radio-opacity">
                 <input type="radio" name="workbook" id="workbook1" class="hero-radio__input">
+                <label for="workbook1" class="work"></label>
                 <label for="workbook1" class="hero-radio__label">Электронная</label>
             </div>
-           <div>
+           <div class="radio">
                 <input type="radio" name="workbook" id="workbook2" class="hero-radio__input" checked>
+                <label for="workbook2" class="work"></label>
                 <label for="workbook2" class="hero-radio__label">Бумажная</label>
            </div>
         </div>
@@ -70,6 +89,7 @@
             Задайте свой вопрос в Telegram <a href="#">@bot_Hopper</a> 
         </div>
     </span>
+    
 </body>
 <script src="js/index.js"></script>
 </html>

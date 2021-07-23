@@ -358,18 +358,78 @@ body {
   width: 100%;
   border: none;
   padding: 18px 16px;
-  color: #808FC0;
+  color: #001E82;
   border-bottom: solid #001E82 2px;
   margin-bottom: 24px;
   background-color: #F2F3F6;
+  outline: none;
 }
 
-input::-webkit-input-placeholder {
-  color: #808FC0;
+.input:hover {
+  background-color: #E1E4EC;
 }
 
-input::-moz-placeholder {
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input-wrapper__placeholder {
+  position: absolute;
+  top: 18px;
+  left: 16px;
   color: #808FC0;
+  cursor: text;
+  font-family: Suisse Intl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.input-wrapper__placeholder-up {
+  top: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #462DC8;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.input-wrapper__placeholder-up--color {
+  color: #808FC0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.input-wrapper:nth-child(6) {
+  margin-top: 24px;
+}
+
+.radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+
+.radio-opacity {
+  opacity: .6;
+}
+
+.work {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/radio-off.svg);
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-image: url(../img/radio-on.svg);
 }
 
 .hero {
@@ -434,10 +494,6 @@ input::-moz-placeholder {
           align-items: center;
 }
 
-.hero-fields div {
-  position: relative;
-}
-
 .hero-fields div img {
   position: absolute;
   top: 14px;
@@ -445,7 +501,6 @@ input::-moz-placeholder {
 }
 
 .hero-fields__js {
-  margin-top: 24px;
   border: none;
   margin-bottom: 0;
 }
@@ -466,6 +521,10 @@ input::-moz-placeholder {
   margin-bottom: 24px;
 }
 
+.hero-radio-opacity {
+  opacity: 0.6;
+}
+
 .hero-radio__title {
   margin: 24px 0 12px 0;
   font-family: Suisse Intl;
@@ -478,6 +537,8 @@ input::-moz-placeholder {
 
 .hero-radio__input {
   margin-right: 12px;
+  cursor: pointer;
+  display: none;
 }
 
 .hero-radio__label {
@@ -487,6 +548,7 @@ input::-moz-placeholder {
   font-size: 16px;
   line-height: 20px;
   color: #001E82;
+  cursor: pointer;
 }
 
 .hero-clip {
@@ -509,10 +571,6 @@ input::-moz-placeholder {
   color: #001E82;
 }
 
-.hero-clip__input {
-  display: none;
-}
-
 .hero-clip__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -527,6 +585,7 @@ input::-moz-placeholder {
   background: #F2EFFF;
   border-radius: 4px;
   height: 32px;
+  cursor: pointer;
 }
 
 .hero-clip__label:hover {
@@ -562,6 +621,13 @@ input::-moz-placeholder {
   padding: 12px 24px;
   border: none;
   margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.hero-submit__btn:hover, .hero-submit__btn:focus {
+  background: #654DE1;
+  -webkit-box-shadow: 4px 4px 12px rgba(123, 97, 255, 0.3);
+          box-shadow: 4px 4px 12px rgba(123, 97, 255, 0.3);
 }
 
 .question {
