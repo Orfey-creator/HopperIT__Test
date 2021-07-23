@@ -28,26 +28,26 @@
           <a href="#" class="tg-link">@bot_Hopper</a>
       </div>
    </header>
-   <form class="hero">
+   <form class="hero" onsubmit="validate(event)">
         <div class="hero-header">
             <h1 class="hero-header__title">Анкета соискателя</h1>
             <span class="hero-header__txt">Допускается загрузка документов в форматах PDF, JPG, JPEG, PNG</span>
         </div>
         <div class="hero-fields">
             <div class="input-wrapper">
-                <input type="text" class="hero-fields__name input" id="name">
+                <input type="text" class="hero-fields__name input" id="name" required>
                 <label class="input-wrapper__placeholder" for="name">ФИО</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" class="hero-fields__dob input" id="dob">
+                <input type="text" class="hero-fields__dob input" id="dob" maxlength="10" required>
                 <label class="input-wrapper__placeholder" for="dob">Дата рождения</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" class="hero-fields__mail input" id="mail">
+                <input type="text" class="hero-fields__mail input" id="mail" required>
                 <label class="input-wrapper__placeholder" for="mail">Почта</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" class="hero-fields__phone input" id="phone">
+                <input type="phone" class="hero-fields__phone input" id="phone" required>
                 <label class="input-wrapper__placeholder" for="phone">Телефон</label>
             </div>
             <div class="input-wrapper">
@@ -83,7 +83,7 @@
             </label>
         </div>
         <div class="hero-submit">
-            <button class="hero-submit__btn">
+            <button class="hero-submit__btn" type="submit" >
                 Отправить
             </button>
         </div>
