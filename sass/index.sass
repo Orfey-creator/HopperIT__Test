@@ -1,11 +1,19 @@
-// @import 'font'
-@import 'settings'
 @import 'normalize'
+@import 'settings'
+
 
 body
     background: $bgc
+.header
+    display: flex
+    justify-content: space-around
 .logo
-    padding: 32px 0 0 24px
+    padding: 32px 0 0 24px     
+    &-mobile
+        display: none
+.tg
+    display: none
+    padding: 14px 0
 .input // общиий стиль для инпутов
     width: 100%
     border: none
@@ -15,6 +23,11 @@ body
     margin-bottom: 24px
     background-color: $bgc
     outline: none
+    font-family: Suisse Intl
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 20px
     &:hover
         background-color: $grey
     &-wrapper
@@ -32,7 +45,7 @@ body
             font-size: 16px
             line-height: 20px
             &-up
-                top: 0 
+                top: 5px
                 font-size: 12px
                 line-height: 14px
                 color: $purple 
@@ -98,7 +111,6 @@ input[type="radio"]:checked+label
         flex-wrap: nowrap
         align-items: center
         & div 
-            
             & img
                 position: absolute
                 top: 14px
@@ -204,4 +216,71 @@ input[type="radio"]:checked+label
             color: $blue
             text-decoration: none
 
-    
+@media (max-width: 425px)
+    .logo
+        display: none
+        &-mobile
+            display: flex
+            padding: 16px 0
+            justify-content: center
+            align-items: center
+    .tg
+        display: flex
+        justify-content: center
+        align-items: center
+        font-family: Suisse Intl
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 16px
+        margin-bottom: 4px
+        & a
+            text-decoration: none
+            margin-left: 8px
+    .question
+        display: none
+    .hero
+        &-header
+            padding: 32px 16px 24px 16px
+            &__title
+                font-size: 24px
+                line-height: 28px
+            &__txt
+                font-size: 14px
+                line-height: 16px
+        &-fields
+            padding: 0 16px
+        &-radio
+            padding: 0 16px
+            &__title
+                font-size: 14px
+                line-height: 16px
+            &__label
+                font-size: 14px
+                line-height: 16px
+        &-clip 
+            padding: 0 16px
+            &__title
+                font-size: 14px
+                line-height: 16px
+            &__label
+                &-txt
+                    font-size: 14px
+                    line-height: 16px
+        &-submit
+            padding: 0 16px
+            &__btn
+                font-size: 14px
+                line-height: 16px
+    .input
+        font-size: 14px
+        line-height: 16px
+        &-wrapper
+            font-size: 14px
+            line-height: 16px
+            &__placeholder
+                font-size: 14px
+                line-height: 16px
+                &-up
+                    font-size: 14px
+                    line-height: 16px
