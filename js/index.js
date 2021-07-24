@@ -115,23 +115,10 @@ if(len === 5) {
  
 dateInputMask(input);
 
-// //запрет ввода цифр в инпут ФИО
-// document.getElementById('mail').addEventListener("input", (e) => {
-//     e.target.value = e.target.value.replace(/\S+@\S+\.\S+/,'');
-// });
-
-//маска на email
-// function validateEmail(email) 
-//     {
-//         var re = /\S+@\S+\.\S+/;
-//         return re.test(email);
-//     }
-    
-// console.log(validateEmail(document.getElementById('mail').value));
-
+//валмдация формы
 function validate(event) {
     event.preventDefault();
-    function validateEmail(email) 
+    function validateEmail(email) //валидация почты
     {
         var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
         ;
@@ -140,3 +127,14 @@ function validate(event) {
     
 console.log(validateEmail(document.getElementById('mail').value));
 }
+
+document.getElementById('file').addEventListener('input', () => {
+    document.querySelector('.hero-clip__label').style.display = 'none';
+    document.querySelector('.hero-clip__file-txt').innerHTML = document.getElementById('file').value.split('\\').pop();
+    document.querySelector('.hero-clip__file').style.display = 'flex';
+    document.querySelector('.hero-clip__file').querySelector('.hero-clip__file-img').addEventListener('click', (e) => {
+        document.getElementById('file').value = '';
+        e.target.parentNode.style.display = 'none';
+        document.querySelector('.hero-clip__label').style.display = 'flex';
+    })
+})

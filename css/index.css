@@ -354,8 +354,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .logo {
@@ -593,6 +591,10 @@ input[type="radio"]:checked + label {
   color: #001E82;
 }
 
+.hero-clip__input {
+  display: none;
+}
+
 .hero-clip__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -619,6 +621,34 @@ input[type="radio"]:checked + label {
 }
 
 .hero-clip__label-txt {
+  font-family: Suisse Intl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #001E82;
+}
+
+.hero-clip__file {
+  display: none;
+  background-color: #F2F3F6;
+  border-radius: 24px;
+  padding: 6px 12px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 209px;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.hero-clip__file:hover {
+  opacity: 1;
+}
+
+.hero-clip__file-txt {
   font-family: Suisse Intl;
   font-style: normal;
   font-weight: normal;
@@ -671,6 +701,10 @@ input[type="radio"]:checked + label {
 }
 
 @media (max-width: 425px) {
+  .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .logo {
     display: none;
   }
@@ -743,6 +777,10 @@ input[type="radio"]:checked + label {
     line-height: 16px;
   }
   .hero-clip__label-txt {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .hero-clip__file-txt {
     font-size: 14px;
     line-height: 16px;
   }
