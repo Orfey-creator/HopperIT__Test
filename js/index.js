@@ -7,6 +7,7 @@ $(".hero-fields__residence").suggestions({
         console.log(suggestion);
     }
 });
+
 //Лейбл инпута при фокусе или заполнении уезжает вверх
 document.querySelector('.hero-fields').addEventListener('focus', (e) => {
     if (e.target.classList.contains('input')) { //определяем инпут
@@ -41,6 +42,7 @@ document.querySelector('.hero-radio').addEventListener('click', e => {
 //запрет ввода цифр в инпут ФИО
 document.getElementById('name').addEventListener("input", (e) => {
     e.target.value = e.target.value.replace(/([^a-zа-яё]+)/gi, '');
+    sessionStorage.name = e.target.value;
 });
 
 //запрет ввода букв в инпут с телефоном
@@ -72,7 +74,8 @@ function maskPhone(selector, masked = '+7 (___) ___-__-__') {
 		if (event.type === "blur" && this.value.length < 5) {
 			this.value = "";
 		}
-
+        sessionStorage.phone = document.getElementById('phone').value;
+        
 	}
 
 	for (const elem of elems) {
@@ -85,16 +88,16 @@ function maskPhone(selector, masked = '+7 (___) ___-__-__') {
 maskPhone('input[type=phone]')
 
 //маска на ввод даты
-var input = document.querySelectorAll('#dob')[0];
+let input = document.querySelector('#dob');
  
-var dateInputMask = function dateInputMask(elm) {
+let dateInputMask = function dateInputMask(elm) {
  
     elm.addEventListener('keyup', function(e) {
     if( e.keyCode < 47 || e.keyCode > 57) {
       e.preventDefault();
     }
  
-   var len = elm.value.length;
+   let len = elm.value.length;
  
     if(len !== 1 || len !== 3) {
       if(e.keyCode == 47) {
@@ -106,29 +109,37 @@ var dateInputMask = function dateInputMask(elm) {
       elm.value = elm.value+'.';
     }}
  
-if(len === 5) {
-    if (e.keyCode !== 8 && e.keyCode !== 46) { 
-      elm.value = elm.value+'.';
+    if(len === 5) {
+        if (e.keyCode !== 8 && e.keyCode !== 46) { 
+        elm.value = elm.value+'.';
     }}
-  });
+    sessionStorage.dob = elm.value;
+    });
+
 };
  
 dateInputMask(input);
 
-//валмдация формы
-function validate(event) {
-    event.preventDefault();
+document.getElementById('mail').addEventListener('input', () => {
     function validateEmail(email) //валидация почты
     {
-        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+        let re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
         ;
+        sessionStorage.mail = email;
         return re.test(email);
+        
     }
-    
-console.log(validateEmail(document.getElementById('mail').value));
-}
+    validateEmail(document.getElementById('mail').value);
+})
 
-document.getElementById('file').addEventListener('input', () => {
+
+//адрес проживания
+document.getElementById('search_input').addEventListener('change', (e)=> {
+    sessionStorage.residence = e.target.value;
+})
+
+//Прикрепление файла
+document.getElementById('file').addEventListener('change', () => {
     document.querySelector('.hero-clip__label').style.display = 'none';
     document.querySelector('.hero-clip__file-txt').innerHTML = document.getElementById('file').value.split('\\').pop();
     document.querySelector('.hero-clip__file').style.display = 'flex';
@@ -137,4 +148,51 @@ document.getElementById('file').addEventListener('input', () => {
         e.target.parentNode.style.display = 'none';
         document.querySelector('.hero-clip__label').style.display = 'flex';
     })
+    sessionStorage.file = document.getElementById('file').value;
 })
+
+//Заолнение из локального хранилища
+function getSessionStorage () {
+    if (sessionStorage.name !== undefined) {
+        document.getElementById('name').value = sessionStorage.name;
+    }
+    if (sessionStorage.dob !== undefined) {
+        document.getElementById('dob').value = sessionStorage.dob;
+    }
+    if (sessionStorage.mail !== undefined) {
+        document.getElementById('mail').value = sessionStorage.mail;
+    }
+    if (sessionStorage.phone !== undefined) {
+        document.getElementById('phone').value = sessionStorage.phone;
+    }
+    if (sessionStorage.residence !== undefined) {
+        document.getElementById('search_input').value = sessionStorage.residence;
+    }    
+    
+}
+getSessionStorage();
+
+//Подсказка у инпутов вверх при заполнении из сессион стораджа
+document.querySelectorAll('.input').forEach((elem) => {
+    if (elem.value !== '' ) {
+        elem.parentNode.querySelector('.input-wrapper__placeholder').classList.add('input-wrapper__placeholder-up') //находим лейбл через родителя
+        elem.parentNode.querySelector('.input-wrapper__placeholder-up').classList.add('input-wrapper__placeholder-up--color') //добавляем блеклый цвет 
+    }
+})
+
+//отправка данных
+function validate(event) {
+    event.preventDefault();
+    console.log(document.getElementById('name').value);
+    console.log(document.getElementById('dob').value);
+    console.log(document.getElementById('mail').value);
+    console.log(document.getElementById('phone').value);
+    console.log(document.getElementById('search_input').value);
+    console.log(document.getElementById('js-range').value);
+    if (document.getElementById('workbook1').checked) {
+        console.log(document.querySelectorAll('.hero-radio__label')[0].innerHTML)    
+    } else {
+        console.log(document.querySelectorAll('.hero-radio__label')[1].innerHTML)    
+    }
+    console.log(document.getElementById('file').value)
+}
