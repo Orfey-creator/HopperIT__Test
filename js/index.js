@@ -168,6 +168,9 @@ function getSessionStorage () {
     if (sessionStorage.residence !== undefined) {
         document.getElementById('search_input').value = sessionStorage.residence;
     }    
+    if (sessionStorage.jsSkill!== undefined) {
+        document.getElementById('js').value = sessionStorage.jsSkill;
+    }    
     
 }
 getSessionStorage();
@@ -188,7 +191,7 @@ function validate(event) {
     console.log(document.getElementById('mail').value);
     console.log(document.getElementById('phone').value);
     console.log(document.getElementById('search_input').value);
-    console.log(document.getElementById('js-range').value);
+    console.log(document.getElementById('js').value);
     if (document.getElementById('workbook1').checked) {
         console.log(document.querySelectorAll('.hero-radio__label')[0].innerHTML)    
     } else {
@@ -196,3 +199,33 @@ function validate(event) {
     }
     console.log(document.getElementById('file').value)
 }
+
+//ф-ия смены навыка js
+function changeJsSkill (e) {
+    const jsSkill =  document.getElementById('js');
+    const jsSkillLabel = jsSkill.parentNode.querySelector('label');
+    if (e.target.value === '1' ) {
+        jsSkill.value = 'Начинающий'
+    }
+    if (e.target.value === '2' ) {
+        jsSkill.value = 'Базовый'
+    }
+    if (e.target.value === '3' ) {
+        jsSkill.value = 'Продвинутый'
+    }
+    if (e.target.value === '4' ) {
+        jsSkill.value = 'Отличный'
+    }
+    if (e.target.value === '5' ) {
+        jsSkill.value = 'Гуру'
+    }
+    jsSkillLabel.classList.add('input-wrapper__placeholder-up');
+    jsSkillLabel.classList.add('input-wrapper__placeholder-up--color');
+    sessionStorage.jsSkill = jsSkill.value;
+}
+
+//слушаем события изменения ползунка
+const inputJs = document.getElementById('js-range');
+inputJs.addEventListener('change' , (e) => {
+    changeJsSkill(e);
+})

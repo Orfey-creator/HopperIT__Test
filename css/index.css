@@ -484,6 +484,46 @@ input[type="radio"]:checked + label {
   display: none !important;
 }
 
+input[type='range'] {
+  overflow: hidden;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  color: #001E82;
+  margin-top: -1px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: pointer;
+  background: #001E82;
+  -webkit-box-shadow: -250px 0 0 250px #001E82;
+          box-shadow: -250px 0 0 250px #001E82;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #001E82;
+}
+
+input[type="range"]::-moz-range-track {
+  background-color: #ffffff;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background-color: #001E82;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background-color: #ffffff;
+}
+
 .hero {
   max-width: 540px;
   background-color: #ffffff;
